@@ -7,6 +7,7 @@ from pathlib import Path
 
 from harness.schemas.task import Task
 from harness.runners.echo import EchoRunner
+from harness.runners.ollama import OllamaRunner
 
 
 def load_tasks(path: Path) -> list[Task]:
@@ -24,16 +25,25 @@ def sha256_text(value: str) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--runner",  required=True)
+    parser.add_argument("--model", required=True)
     parser.add_argument("--tasks", required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--run-id", required=True)
     args = parser.parse_args()
 
+    runner_name = Path(args.runner).stem
+    model_name = Path(args.model).stem
     task_path = Path(args.tasks)
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    runner = EchoRunner()
+    runners = {"echo": EchoRunner, "ollama": OllamaRunner}
+    models = {"echo", "gpt-oss"}
+    if model_name not in models:
+        raise ValueError(f"Model {model_name} is not supported.")
+
+    runner = runners[runner_name](model=model_name)
     tasks = load_tasks(task_path)
 
     run_metadata = {
@@ -42,7 +52,7 @@ def main() -> None:
         "lab_section": "Open Model Lab",
         "month_gate": "2026-07-foundation-eval-harness",
         "model": {
-            "name": runner.name,
+            "name": model_name,
             "provider": "local",
             "version": "debug",
             "params": "n/a",
@@ -87,7 +97,7 @@ def main() -> None:
                 "input_tokens": generated["input_tokens"],
                 "output_tokens": generated["output_tokens"],
                 "cost_estimate": generated["cost_estimate"],
-                "caveats": ["Echo runner records outputs but does not grade them."],
+                "caveats": ["Echo runner records outputs but does not grade them."] if runner_name == "echo" else [],
                 "raw_result": generated["raw_result"],
             }
 
