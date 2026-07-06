@@ -25,10 +25,17 @@ Each task is stored as one JSON object per line.
   "expected_behavior": "The function should return true for prime numbers and false otherwise.",
   "difficulty": "easy",
   "tags": ["python", "unit-test", "deterministic"],
+  "tests": [
+    "assert is_prime(2) is True",
+    "assert is_prime(4) is False",
+    "assert is_prime(1) is False"
+  ],
   "claim_scope": "This task measures basic coding correctness only.",
   "quality_status": "draft"
 }
 ```
+
+## Required Fields
 
 | Field               | Type          | Description                                       |
 | ------------------- | ------------- | ------------------------------------------------- |
@@ -41,3 +48,9 @@ Each task is stored as one JSON object per line.
 | `tags`              | array[string] | Search/filter tags.                               |
 | `claim_scope`       | string        | What this task can and cannot support as a claim. |
 | `quality_status`    | string        | Review status of the task.                        |
+
+## Optional Fields
+
+| Field   | Type          | Description                              |
+| ------- | ------------- | ---------------------------------------- |
+| `tests` | array[string] | Executable checks for `unit_test` tasks. |
