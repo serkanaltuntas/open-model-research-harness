@@ -14,6 +14,7 @@ class Task:
     claim_scope: str
     quality_status: str
     tests: list[str] | None = None
+    rules: dict[str, object] | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Task":
@@ -28,4 +29,5 @@ class Task:
             claim_scope=data["claim_scope"],
             quality_status=data["quality_status"],
             tests=data.get("tests"),
+            rules=data.get("rules"),
         )

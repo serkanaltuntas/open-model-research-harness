@@ -51,6 +51,7 @@ Each task is stored as one JSON object per line.
 
 ## Optional Fields
 
-| Field   | Type          | Description                              |
-| ------- | ------------- | ---------------------------------------- |
-| `tests` | array[string] | Executable checks for `unit_test` tasks. |
+| Field   | Type          | Description                                  |
+| ------- | ------------- | -------------------------------------------- |
+| `tests` | array[string] | Executable checks for `unit_test` tasks.     |
+| `rules` | object        | Declarative checks for `rule_based` graders. |
