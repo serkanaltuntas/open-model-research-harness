@@ -15,6 +15,7 @@ class Task:
     quality_status: str
     tests: list[str] | None = None
     rules: dict[str, object] | None = None
+    rubric: dict[str, object] | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Task":
@@ -30,4 +31,5 @@ class Task:
             quality_status=data["quality_status"],
             tests=data.get("tests"),
             rules=data.get("rules"),
+            rubric=data.get("rubric"),
         )
