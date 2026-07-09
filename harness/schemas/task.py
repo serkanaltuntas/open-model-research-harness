@@ -16,6 +16,7 @@ class Task:
     tests: list[str] | None = None
     rules: dict[str, object] | None = None
     rubric: dict[str, object] | None = None
+    accepted_answers: list[str] | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Task":
@@ -32,4 +33,5 @@ class Task:
             tests=data.get("tests"),
             rules=data.get("rules"),
             rubric=data.get("rubric"),
+            accepted_answers=data.get("accepted_answers"),
         )
