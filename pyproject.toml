@@ -3,6 +3,7 @@ name = "open-model-research-harness"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
+    "pyyaml>=6.0.3",
     "requests>=2.34.2",
 ]
 

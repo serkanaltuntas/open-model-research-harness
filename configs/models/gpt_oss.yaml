@@ -1,0 +1,9 @@
+name: gpt-oss
+backend: ollama
+model: gpt-oss:latest
+provider: OpenAI
+ollama_id: 17052f91a42e
+quantization: unknown
+known_caveats:
+  - The exact local artifact is identified by the recorded Ollama ID.
+  - Quantization details have not been independently verified.

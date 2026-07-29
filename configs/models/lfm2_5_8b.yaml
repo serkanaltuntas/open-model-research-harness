@@ -1,0 +1,9 @@
+name: lfm2.5-8b
+backend: ollama
+model: lfm2.5:8b
+provider: Liquid AI
+ollama_id: 9cf756159fc2
+quantization: unknown
+known_caveats:
+  - The exact local artifact is identified by the recorded Ollama ID.
+  - Quantization details have not been independently verified.

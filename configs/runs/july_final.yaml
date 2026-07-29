@@ -1,0 +1,5 @@
+dataset: datasets/evals/july_eval_v1.jsonl
+temperature: 0.0
+max_tokens: 1024
+seed: 42
+timeout_seconds: 300

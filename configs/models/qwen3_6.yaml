@@ -1,0 +1,9 @@
+name: qwen3.6
+backend: ollama
+model: qwen3.6:latest
+provider: Qwen
+ollama_id: 07d35212591f
+quantization: unknown
+known_caveats:
+  - The exact local artifact is identified by the recorded Ollama ID.
+  - Quantization details have not been independently verified.

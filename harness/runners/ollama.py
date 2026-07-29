@@ -1,7 +1,16 @@
 from typing import Any
+
 import requests
 
 from harness.runners.base import ModelRunner
+
+
+SUPPORTED_GENERATION_KEYS = {
+    "temperature",
+    "max_tokens",
+    "seed",
+    "timeout_seconds",
+}
 
 
 class OllamaRunner(ModelRunner):
@@ -11,7 +20,8 @@ class OllamaRunner(ModelRunner):
         self.model = model
 
     def generate(self, prompt: str, config: dict[str, Any]) -> dict[str, Any]:
-        output = self._request_generation(prompt)
+        self._validate_generation_config(config)
+        output = self._request_generation(prompt, config)
 
         return {
             "model": self.model,
@@ -23,19 +33,51 @@ class OllamaRunner(ModelRunner):
             "raw_result": output["raw_result"],
         }
 
-    def _tokens_per_second(self, token_count: int | None, duration_ns: int | None) -> float | None:
+    def _tokens_per_second(
+        self,
+        token_count: int | None,
+        duration_ns: int | None,
+    ) -> float | None:
         if not token_count or not duration_ns or duration_ns <= 0:
             return None
 
         return token_count / (duration_ns / 1_000_000_000)
 
-    def _request_generation(self, prompt: str) -> dict[str, Any]:
+    def _validate_generation_config(self, config: dict[str, Any]) -> None:
+        unsupported_keys = sorted(set(config) - SUPPORTED_GENERATION_KEYS)
+        if unsupported_keys:
+            raise ValueError(
+                f"Unsupported Ollama generation option: {unsupported_keys[0]!r}. "
+                f"Supported options: {', '.join(sorted(SUPPORTED_GENERATION_KEYS))}."
+            )
+
+    def _request_generation(
+        self,
+        prompt: str,
+        config: dict[str, Any],
+    ) -> dict[str, Any]:
+        options = {}
+        option_mapping = {
+            "temperature": "temperature",
+            "seed": "seed",
+            "max_tokens": "num_predict",
+        }
+        for config_name, option_name in option_mapping.items():
+            value = config.get(config_name)
+            if value is not None:
+                options[option_name] = value
+
+        request_payload = {
+            "model": self.model,
+            "prompt": prompt,
+            "stream": False,
+            "options": options,
+        }
         response = requests.post(
-            "http://localhost:11434/api/generate", json={
-                "model": self.model,
-                "prompt": prompt,
-                "stream": False
-            })
+            "http://localhost:11434/api/generate",
+            json=request_payload,
+            timeout=config.get("timeout_seconds"),
+        )
 
         response.raise_for_status()
         payload = response.json()
@@ -52,6 +94,9 @@ class OllamaRunner(ModelRunner):
             "input_tokens": prompt_eval_count,
             "output_tokens": eval_count,
             "cost_estimate": 0.0,
-            "output_tokens_per_sec": self._tokens_per_second(eval_count, eval_duration),
+            "output_tokens_per_sec": self._tokens_per_second(
+                eval_count,
+                eval_duration,
+            ),
             "raw_result": {k: v for k, v in payload.items() if k != "response"},
         }
