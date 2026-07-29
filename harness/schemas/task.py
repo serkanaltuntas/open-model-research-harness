@@ -18,6 +18,23 @@ class Task:
     rubric: dict[str, object] | None = None
     accepted_answers: list[str] | None = None
 
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "id": self.id,
+            "category": self.category,
+            "prompt": self.prompt,
+            "grader": self.grader,
+            "expected_behavior": self.expected_behavior,
+            "difficulty": self.difficulty,
+            "tags": list(self.tags),
+            "claim_scope": self.claim_scope,
+            "quality_status": self.quality_status,
+            "tests": self.tests,
+            "rules": self.rules,
+            "rubric": self.rubric,
+            "accepted_answers": self.accepted_answers,
+        }
+
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Task":
         return cls(

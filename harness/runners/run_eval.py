@@ -1,13 +1,20 @@
 import argparse
 import hashlib
 import json
+import logging
 from datetime import datetime, timezone
 from os import walk
 from pathlib import Path
+from typing import Any
 
+from harness.graders import GraderResult, get_grader
+from harness.runners.base import ModelRunner
 from harness.schemas.task import Task
 from harness.runners.echo import EchoRunner
 from harness.runners.ollama import OllamaRunner
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def load_tasks(path: Path) -> list[Task]:
@@ -21,6 +28,65 @@ def load_tasks(path: Path) -> list[Task]:
 
 def sha256_text(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def grade_task(task: Task, output: str) -> GraderResult:
+    try:
+        grader = get_grader(task.grader)
+        return grader.grade(task.to_dict(), output)
+    except Exception as error:
+        LOGGER.exception("Grader failed for task %s", task.id)
+        error_detail = str(error).strip().splitlines()[0] if str(error).strip() else ""
+        reason = f"Grader failed with {type(error).__name__}."
+        if error_detail:
+            reason = f"{reason[:-1]}: {error_detail[:160]}"
+
+        return {
+            "score": 0.0,
+            "passed": False,
+            "reason": reason,
+            "failure_mode": "grader_error",
+            "grader_confidence": "low",
+        }
+
+
+def write_results(
+    *,
+    tasks: list[Task],
+    runner: ModelRunner,
+    results_path: Path,
+    run_id: str,
+    runner_name: str,
+) -> None:
+    with results_path.open("w", encoding="utf-8") as f:
+        for task in tasks:
+            generated = runner.generate(task.prompt, config={})
+            grading = grade_task(task, generated["output"])
+
+            result: dict[str, Any] = {
+                "run_id": run_id,
+                "task_id": task.id,
+                "category": task.category,
+                "model": generated["model"],
+                "prompt_hash": sha256_text(task.prompt),
+                "output_hash": sha256_text(generated["output"]),
+                "prompt": task.prompt,
+                "output": generated["output"],
+                "grader": task.grader,
+                **grading,
+                "latency_ms": generated["latency_ms"],
+                "input_tokens": generated["input_tokens"],
+                "output_tokens": generated["output_tokens"],
+                "cost_estimate": generated["cost_estimate"],
+                "caveats": (
+                    ["Echo runner output is diagnostic, not a model evaluation."]
+                    if runner_name == "echo"
+                    else []
+                ),
+                "raw_result": generated["raw_result"],
+            }
+
+            f.write(json.dumps(result, ensure_ascii=False) + "\n")
 
 
 def main() -> None:
@@ -75,33 +141,13 @@ def main() -> None:
 
     results_path = output_dir / "results.jsonl"
 
-    with results_path.open("w", encoding="utf-8") as f:
-        for task in tasks:
-            generated = runner.generate(task.prompt, config={})
-
-            result = {
-                "run_id": args.run_id,
-                "task_id": task.id,
-                "category": task.category,
-                "model": generated["model"],
-                "prompt_hash": sha256_text(task.prompt),
-                "output_hash": sha256_text(generated["output"]),
-                "prompt": task.prompt,
-                "output": generated["output"],
-                "score": None,
-                "passed": None,
-                "grader": task.grader,
-                "grader_confidence": None,
-                "failure_mode": None,
-                "latency_ms": generated["latency_ms"],
-                "input_tokens": generated["input_tokens"],
-                "output_tokens": generated["output_tokens"],
-                "cost_estimate": generated["cost_estimate"],
-                "caveats": ["Echo runner records outputs but does not grade them."] if runner_name == "echo" else [],
-                "raw_result": generated["raw_result"],
-            }
-
-            f.write(json.dumps(result, ensure_ascii=False) + "\n")
+    write_results(
+        tasks=tasks,
+        runner=runner,
+        results_path=results_path,
+        run_id=args.run_id,
+        runner_name=runner_name,
+    )
 
     run_metadata["finished_at"] = datetime.now(timezone.utc).isoformat()
 
