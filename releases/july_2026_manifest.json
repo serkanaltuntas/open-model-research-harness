@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "baseline": "july_2026",
+  "project": "Open Model Research Harness",
+  "public_section": "Open Model Lab",
+  "git_commit": "0b6a236ee1f1440a7aca6d84249fd6af0b582c0d",
+  "created_at": "2026-07-29T10:12:13Z",
+  "dataset": {
+    "name": "july_eval_v1",
+    "version": "v1",
+    "path": "datasets/evals/july_eval_v1.jsonl",
+    "task_count": 25,
+    "sha256": "38c646401b74f92deac04c5e225dfeabd822f72c3e30ce52dfaa24d817375760"
+  },
+  "model_configurations": [
+    {
+      "path": "configs/models/lfm2_5_8b.yaml",
+      "name": "lfm2.5-8b",
+      "ollama_model": "lfm2.5:8b",
+      "ollama_id": "9cf756159fc2",
+      "sha256": "7ee4aaf5330164722573516959ccc53ac911e27b2657281591291047e1374cbc"
+    },
+    {
+      "path": "configs/models/gpt_oss.yaml",
+      "name": "gpt-oss",
+      "ollama_model": "gpt-oss:latest",
+      "ollama_id": "17052f91a42e",
+      "sha256": "3952afa812354950c72263a2137f341b1db444d6bce608f8b8d2b7113e981378"
+    },
+    {
+      "path": "configs/models/qwen3_6.yaml",
+      "name": "qwen3.6",
+      "ollama_model": "qwen3.6:latest",
+      "ollama_id": "07d35212591f",
+      "sha256": "71bbcf8da4add1dae46ec3f94de85ea21d9337890bbe56d9cca6359c37cccd7e"
+    }
+  ],
+  "run_configuration": {
+    "path": "configs/runs/july_final.yaml",
+    "dataset": "datasets/evals/july_eval_v1.jsonl",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "seed": 42,
+    "timeout_seconds": 300,
+    "sha256": "abb1a44e920d51aed9c8d4ca6d5ca1a64de470c2239f0e1b054a486873e70801"
+  },
+  "grader_versions": {
+    "registry_path": "harness/graders/registry.py",
+    "registry_sha256": "7b495ccb3f37de50c22f4fe24c5bf4bf612c7fd4d93b594505fc116d422d16f2",
+    "registered_graders": [
+      {
+        "name": "unit_test",
+        "implementation": "harness/graders/unit_test.py",
+        "sha256": "89d7e52665923b864caad023e9257ee97aa15a1a6f65d8537397fceed796f554"
+      },
+      {
+        "name": "exact_match",
+        "implementation": "harness/graders/exact_match.py",
+        "sha256": "252e81d0096cc842c030a5ad5ca1221899173e67681651b5f9c651da39ffcb7c"
+      },
+      {
+        "name": "rule_based",
+        "implementation": "harness/graders/rule_based.py",
+        "sha256": "8f53d966ab662cd40f8a5347f28a22f13a56e1eee5dfb24df1e89406b887fe5d"
+      },
+      {
+        "name": "rubric",
+        "implementation": "harness/graders/rubric.py",
+        "sha256": "799774a7e9bd4bb817e814d0833cc7440f09e6c3eae6954ba13cdb42f909cacf"
+      }
+    ]
+  },
+  "result_artifacts": {
+    "comparison_report": {
+      "path": "reports/2026-07-model-comparison.md",
+      "sha256": "035a106a2817fe6402e1e07169eb61d83985163c62db58543bae643225c1d434"
+    },
+    "failure_audit": {
+      "path": "reports/2026-07-failure-audit.md",
+      "sha256": "4b7b1989d77ba8aef31ad472ad83d0540150f9d3887d2cb0797e2dce0cf20cb1"
+    },
+    "final_report": {
+      "path": "reports/2026-07-minimal-open-model-eval-harness.md",
+      "sha256": "87d9883ef93b7989abea24ff19d8301946910f6e715da2c416b0402bb9cca1a2"
+    }
+  },
+  "run_artifacts": [
+    {
+      "run_id": "2026-07-final-lfm2-5-8b",
+      "model_name": "lfm2.5-8b",
+      "expected_local_directory": "results/july_final/lfm2_5_8b",
+      "expected_result_count": 25,
+      "run_json_sha256": "253e1d6aa937affbc006a5e862d5ee9eca73149bb71d3e6151d970e4d3f135fc",
+      "results_jsonl_sha256": "96c7589620dd059ff3c1798497644ba3066ebfc481d17fe9436f7aa404dfa0dc"
+    },
+    {
+      "run_id": "2026-07-final-gpt-oss",
+      "model_name": "gpt-oss",
+      "expected_local_directory": "results/july_final/gpt_oss",
+      "expected_result_count": 25,
+      "run_json_sha256": "22a35c49074297343c984249e0010db2c91e5b472b2ea47f0dbcce76691736f1",
+      "results_jsonl_sha256": "635f1678c5fddf636c410fd054553acc0f819254634ae15c95839192fe51f2f7"
+    },
+    {
+      "run_id": "2026-07-final-qwen3-6",
+      "model_name": "qwen3.6",
+      "expected_local_directory": "results/july_final/qwen3_6",
+      "expected_result_count": 25,
+      "run_json_sha256": "978c116c2de89a1bee8c16c329050da12352ceaf15856ad46d83119042efe018",
+      "results_jsonl_sha256": "067c5bafe0c3a35eccc89686d13c3dce1c7e88168b905c4b17fc073e8e012e90"
+    }
+  ],
+  "validation": {
+    "dataset_validator": {
+      "path": "scripts/validate_dataset.py",
+      "sha256": "1eeaf17ae23d6034b7f1b5cfec174cc7ad3e3f10419a77960ea3d8f8a124c203"
+    },
+    "run_validator": {
+      "path": "scripts/validate_run.py",
+      "sha256": "70d2fae0616f956db21f92b3518694d780641b2e057fcd20ef99312efcdd87c2"
+    },
+    "comparison_implementation": {
+      "path": "harness/reporting/compare_runs.py",
+      "sha256": "713186b0240d43eb5e8b8e5805509546643b30dfbd2a0cef900136ac789500cc"
+    },
+    "automated_test_count": 40,
+    "final_run_count": 3,
+    "results_per_run": 25,
+    "total_scored_results": 75,
+    "grader_errors": 0
+  },
+  "known_limitations": [
+    "The suite contains 25 draft tasks and is not statistically representative.",
+    "Deterministic graders are narrow and sensitive to exact or literal matching.",
+    "Code extraction does not fully handle think-prefixed responses.",
+    "Thinking-output behavior differs across models.",
+    "The fixed 1024-token limit materially affected qwen3.6 results.",
+    "Runtime measurements come from one local machine and environment.",
+    "No repeated-run variance analysis was performed.",
+    "No human evaluation panel was used.",
+    "No statistical significance or general model-ranking claim is made.",
+    "Mutable Ollama tags are mitigated by recording local Ollama IDs.",
+    "Recorded zero API cost does not represent local compute or energy cost.",
+    "The failure audit identified likely grader false negatives without changing recorded results."
+  ]
+}
