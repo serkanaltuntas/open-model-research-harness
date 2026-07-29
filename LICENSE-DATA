@@ -1,0 +1,31 @@
+Open Model Research Harness Data and Documentation License
+
+Copyright 2026 Serkan Altuntaş
+
+Except where otherwise noted, the original datasets and documentation in this
+repository are licensed under the Creative Commons Attribution 4.0
+International License (CC BY 4.0).
+
+The full legal code is available at:
+
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to share and adapt the licensed material for any purpose, including
+commercial purposes, provided that you give appropriate credit, provide a link
+to the license, and indicate if changes were made. No warranties are given.
+
+This license applies to original project material in:
+
+- datasets/
+- docs/
+- reports/
+- releases/
+- README.md
+
+This license does not apply to model outputs, model weights, third-party
+materials, trademarks, or content otherwise marked with separate terms. Those
+materials remain subject to their respective source terms.
+
+Suggested attribution:
+
+Open Model Research Harness by Serkan Altuntaş, licensed under CC BY 4.0.
