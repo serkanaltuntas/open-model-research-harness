@@ -131,6 +131,9 @@ datasets/**/*.sqlite3
 
 # Model weights, checkpoints, adapters, and training artifacts
 models/
+!configs/models/
+configs/models/*
+!configs/models/*.yaml
 checkpoints/
 ckpts/
 weights/
@@ -147,6 +150,9 @@ lora/
 
 # Experiment, eval, and agent-run outputs
 runs/
+!configs/runs/
+configs/runs/*
+!configs/runs/*.yaml
 eval-runs/
 outputs/
 artifacts/

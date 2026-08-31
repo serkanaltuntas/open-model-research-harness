@@ -1,0 +1,31 @@
+name: qwen3-8b-mlx-4bit
+backend: mlx
+repository: mlx-community/Qwen3-8B-4bit
+revision: 545dc4251c05440727734bcd94334791f6ab0192
+upstream_model: Qwen/Qwen3-8B
+license: apache-2.0
+quantization:
+  bits: 4
+  group_size: 64
+training_backend: mlx-lm
+conversion:
+  tool: mlx-lm
+  version: 0.24.0
+model_artifact:
+  path: model.safetensors
+  size_bytes: 4607835174
+  sha256: f2d29621aab300336ad645567ff38c42aac755513006ef4e8a579cf7ef5256d8
+  xet_hash: 09490e15102da38dc1bae3b089e137ef86c835fe4c4a497c5ecdbe19dd69ce62
+tokenizer:
+  revision: 545dc4251c05440727734bcd94334791f6ab0192
+  chat_template_file: tokenizer_config.json
+  artifact:
+    path: tokenizer.json
+    size_bytes: 11422654
+    sha256: aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4
+    xet_hash: 6aec39639a0a2d1ca966356b8c2b8426a484f80ff80731f44fa8482040713bdf
+known_caveats:
+  - The source repository is pinned by commit; the mutable repository name alone is insufficient identity.
+  - The model card records conversion with mlx-lm 0.24.0, while A2 tests a newer compatible runtime.
+  - The weights are quantized; a later smoke run must verify training behavior before any research run.
+  - The existing evaluation harness has no direct MLX runner.
