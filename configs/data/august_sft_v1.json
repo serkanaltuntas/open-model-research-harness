@@ -1,0 +1,150 @@
+{
+  "dataset_id": "august_sft_v1",
+  "seed": 260924,
+  "max_length": 512,
+  "train_per_family": 10,
+  "validation_per_family": 5,
+  "smoke_count": 24,
+  "families": [
+    {
+      "name": "position",
+      "behavior": "instruction_following",
+      "split": "train"
+    },
+    {
+      "name": "label_join",
+      "behavior": "instruction_following",
+      "split": "train"
+    },
+    {
+      "name": "wrap",
+      "behavior": "instruction_following",
+      "split": "train"
+    },
+    {
+      "name": "deduplicate",
+      "behavior": "instruction_following",
+      "split": "train"
+    },
+    {
+      "name": "prefix_filter",
+      "behavior": "instruction_following",
+      "split": "train"
+    },
+    {
+      "name": "remove_token",
+      "behavior": "instruction_following",
+      "split": "validation"
+    },
+    {
+      "name": "rotate",
+      "behavior": "instruction_following",
+      "split": "validation"
+    },
+    {
+      "name": "mapping",
+      "behavior": "structured_output",
+      "split": "train"
+    },
+    {
+      "name": "records",
+      "behavior": "structured_output",
+      "split": "train"
+    },
+    {
+      "name": "nested",
+      "behavior": "structured_output",
+      "split": "train"
+    },
+    {
+      "name": "boolean",
+      "behavior": "structured_output",
+      "split": "train"
+    },
+    {
+      "name": "project",
+      "behavior": "structured_output",
+      "split": "train"
+    },
+    {
+      "name": "group",
+      "behavior": "structured_output",
+      "split": "validation"
+    },
+    {
+      "name": "singleton_arrays",
+      "behavior": "structured_output",
+      "split": "validation"
+    },
+    {
+      "name": "card",
+      "behavior": "concise_factual",
+      "split": "train"
+    },
+    {
+      "name": "largest",
+      "behavior": "concise_factual",
+      "split": "train"
+    },
+    {
+      "name": "catalog",
+      "behavior": "concise_factual",
+      "split": "train"
+    },
+    {
+      "name": "schedule",
+      "behavior": "concise_factual",
+      "split": "train"
+    },
+    {
+      "name": "habitat",
+      "behavior": "concise_factual",
+      "split": "train"
+    },
+    {
+      "name": "missing",
+      "behavior": "concise_factual",
+      "split": "validation"
+    },
+    {
+      "name": "location_chain",
+      "behavior": "concise_factual",
+      "split": "validation"
+    },
+    {
+      "name": "stock",
+      "behavior": "reasoning_format",
+      "split": "train"
+    },
+    {
+      "name": "packages",
+      "behavior": "reasoning_format",
+      "split": "train"
+    },
+    {
+      "name": "elapsed",
+      "behavior": "reasoning_format",
+      "split": "train"
+    },
+    {
+      "name": "discount",
+      "behavior": "reasoning_format",
+      "split": "train"
+    },
+    {
+      "name": "distance",
+      "behavior": "reasoning_format",
+      "split": "train"
+    },
+    {
+      "name": "packing",
+      "behavior": "reasoning_format",
+      "split": "validation"
+    },
+    {
+      "name": "threshold",
+      "behavior": "reasoning_format",
+      "split": "validation"
+    }
+  ]
+}

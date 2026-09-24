@@ -1,0 +1,434 @@
+{
+  "dataset_sha256": "bdc8d479735f7ba0eb6c195105127b3ad523c79d92ff92b74ee007f53a1a9de4",
+  "reviewed_at": "2026-09-24T20:53:29+00:00",
+  "reviewer": "coding assistant; not a human reviewer",
+  "method": "assistant inspection of rendered prompt/answer text",
+  "prototype_selection": "first and last example in each of 28 families",
+  "prototype_examples": 56,
+  "distinct_examples_inspected": 67,
+  "examples": [
+    {
+      "id": "aug26-boolean-001",
+      "content_sha256": "b0cb6b4f726d25cc1aa19f493869680e39a127c022ce0ca535cd54ba887f47e2",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-boolean-010",
+      "content_sha256": "765aa96653ec676e2231fbfc41ed6006dec1089734d2a06d2811a2ed02dc7762",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-card-001",
+      "content_sha256": "6b3f45b6038805c3305492c50a23ce874f6218c675056b004d7f7fcd864a4de3",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-card-010",
+      "content_sha256": "d80ec4434a16ff8ac903849880ee47dc29b4df6485cc9f37926872c5f2de992b",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-catalog-001",
+      "content_sha256": "5f7964f48842bc05e90e02b7e95d070355f867da7532d5df0fa4fbefc4a0ce26",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-catalog-010",
+      "content_sha256": "acb0ab4737840752fae9cca370a1ea1e3cdedbc3c35481bc5cba2e0168e71b92",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-deduplicate-001",
+      "content_sha256": "83146c40e0fc1447890510dbf80e27aa6f1f9f35050481ff48a4efe5b8b2a859",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-deduplicate-004",
+      "content_sha256": "2d4fc784031862f445e85fbef261103c0c37d90643b5c55217305f760aebbea5",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-deduplicate-006",
+      "content_sha256": "1f699f3ab62fe5c3b520e0367d21bbbe96f79eb21a4b5cd2a09023f200addf79",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-deduplicate-010",
+      "content_sha256": "ac4148fbbb7a3fa00e7e12c8899a115f702976cac24afd5d9ade7b4763ea8169",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-discount-001",
+      "content_sha256": "08de93c72a170ae25b0f8b9fc15d366746aab0fe6abd88a8cf7f876b7a0f0e25",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-discount-010",
+      "content_sha256": "4783391a4fad3c901978d6b6ddf76d62738dc2e6140ad02d53bac4ba8341317b",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-distance-001",
+      "content_sha256": "94ad127445f4ab42bd3e6b967eb0e36b060621d7c6ce7bd60918625f34fcfbd5",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-distance-010",
+      "content_sha256": "9a26f28119bd9dd835e882d0d89584a4bc464396a3cdc985cea160118a52a3fb",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-elapsed-001",
+      "content_sha256": "0d372baf7c544baee7bafa2c9b347780f0f16ce66c64ed51aa25d36519fa1501",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-elapsed-010",
+      "content_sha256": "de8a57d687f9ed926eb112397f6572b381537d692fe852dae0a43c14bbb11204",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-group-001",
+      "content_sha256": "27e177449e67f326a1bd9bc68275ad4776374cc9388e11399f195973b1fac284",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-group-005",
+      "content_sha256": "f3dd66b2c86ad9ff91d0047cdfc7a139a4a952622310c31308de6fb754b04349",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-habitat-001",
+      "content_sha256": "e52ddbc65b4a6886cc76894995aa523b8aee592f0d2c3de7166fe0b51ca41f78",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-habitat-010",
+      "content_sha256": "8c6f7c955986538ab44f152b1b1534d9d5a47f078b6b5c0a81f524a34d444770",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-label_join-001",
+      "content_sha256": "a0e3842a97601cc0256d7a6e102c4373f07f755c53d00d0191ab26c6164d9958",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-label_join-010",
+      "content_sha256": "d402abeb4da5b3ae0a068f7becb7c72928faa5ead30d4445929cebf6af5b0c32",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-largest-001",
+      "content_sha256": "97c1a25c61bd745ca17bec795a8291896df7ba2df14a71b136f08b37cf565b65",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-largest-002",
+      "content_sha256": "37e5a190350463c7aad210164a2446f6abfdb473cfe4643a491f759090762854",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-largest-005",
+      "content_sha256": "d61d8b138a79d61045d48236832143d353c9c8c74e7829580913db9124db4dce",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-largest-009",
+      "content_sha256": "94ee3e336da23516dde109d32832858e90202e66f2df33d45aa5fa17628ce96d",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-largest-010",
+      "content_sha256": "e05307f31e3ee6cb39f6bb8e02b3d35854172da47e65757ae286c076b3d3629e",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-location_chain-001",
+      "content_sha256": "88e2db4c519c74b7b4ed486129e020d93d197ed4ce02da141207f228474c3d57",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-location_chain-003",
+      "content_sha256": "c260041a09128f3c5bf73665836ddc5e05d5cc33192870fab7486f768aa4b006",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-location_chain-004",
+      "content_sha256": "fc0af9006146a7ee304eac5ca752d11d1bd9ed6e8acff17ea05289ddb7855bbf",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-location_chain-005",
+      "content_sha256": "a784e5b082e1d218285bdfb82dcca18008a2a634c5bd290f745f97db7bc0c67c",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-mapping-001",
+      "content_sha256": "fed1a8c5f512ab118607c45d8e7d3ca0598df37d62e5849ea15bff5c6151c156",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-mapping-010",
+      "content_sha256": "67f36232af33b188d533190e3ccbf868529b4b3f380ea55baaddd5fb13cc3385",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-missing-001",
+      "content_sha256": "0ff4b8fef9a113a86b6e7fbea11150083f2b3d91a060a047c78bdb08861f1b6d",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-missing-005",
+      "content_sha256": "961893711ec6d691c99e9629d4e5ccfcca07d9c5b2ac68470722b8c7b4d6f103",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-nested-001",
+      "content_sha256": "31a8f5001255c1854f8a9a8ee8f84d9f47aa3f9b93ea43a97208580cdf8b3b3f",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-nested-010",
+      "content_sha256": "695efb6c942415f41d3457b1d3bf4c3f4bc7f5b84d01f8106879d25c680b602b",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-packages-001",
+      "content_sha256": "e5dca34c66b5924ae1065ca9fe322f2cdca8c8334342d8d5d5b59b4ec45f29c5",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-packages-010",
+      "content_sha256": "7253c5b803c0ccd9a3dd3e5a185ee1ba895e21778af89e897646ba39dce339ff",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-packing-001",
+      "content_sha256": "a3f2aeac2012da3164530bce27b161f72cc234fc0a677c666faa82aafbd86925",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-packing-005",
+      "content_sha256": "a315b46f43d0839669dc7f0af0f1836f5c4dbb3041aa5bb0ef3471f8542cc37d",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-position-001",
+      "content_sha256": "8fdb86ac64d4c4cf266c01d8a57355a5552e61b2a39a48ab8ec6f0fab21bb81b",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-position-010",
+      "content_sha256": "cf07cfcdf2c7a2dbeef91488d706377dfa2089f675969a403a936bf71f66d5c1",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-prefix_filter-001",
+      "content_sha256": "49605529f8c0ef960dfc43eb6bc34317bc72076f46d97d36d741dd1c91bcef52",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-prefix_filter-010",
+      "content_sha256": "4e36ef90037ab05f198a2f2026fdc467e09bb095f666488e753dc74ff795871a",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-project-001",
+      "content_sha256": "f1f10d5c87605d0bde89641350eca38c0d8e347f9df2956fce1e3f856940cbd0",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-project-002",
+      "content_sha256": "7fe25b2c8d8b54b6ed74cd99bcf922cffba7481d530794babf19e7af56004fa8",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-project-003",
+      "content_sha256": "130e3d64f1ee0f03b00962a714bc9bb99efcb56a6f61bf4745e10d3a2d331995",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-project-004",
+      "content_sha256": "f8ad181ae5cf582c281fef693f82a97caa2b753b083a5f288d24df40cb286736",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-project-005",
+      "content_sha256": "412675d254fce9e6f672919e9ae67e7e87c52cc617f52feca5fb49e61b152c21",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-project-010",
+      "content_sha256": "44f1962601caa4514edb3f0d045ba47de0dd4de8936b3fa0ce551fb4a5451f4f",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-records-001",
+      "content_sha256": "38028d4bf353b1e60f2ca585e126d7d89175ce396f6a204c34ea64f61ac8b390",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-records-010",
+      "content_sha256": "089f4e5579a0ae55829647f8289c8e7d28541e84888a934b1dcfc3cbf41ac8a9",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-remove_token-001",
+      "content_sha256": "31ea894e595747951931ae97a249bd2dc1cb693fcf1a023afd411e945c0a31eb",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-remove_token-005",
+      "content_sha256": "0f582bd06ab6c2a2436c718b87d77e04b7b01cc0269c73946a299c1d5f2e4d87",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-rotate-001",
+      "content_sha256": "c107be7f874c522220df6992fa6f4a9b8780a947f842eb8dc98666d2f507753f",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-rotate-005",
+      "content_sha256": "0c1088e38ada6a6bebcde363ae078b23c273ebda2c5390725a1f237e5c8f2873",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-schedule-001",
+      "content_sha256": "b9b9f517adfe2235e8d642375f72587b75eddde94f69492ac4871d59c273aed2",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-schedule-010",
+      "content_sha256": "b70b7dea3da99bf8616b5b84e1c4ec70f14168c0f9c998fdc789d3696551231d",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-singleton_arrays-001",
+      "content_sha256": "17e9334aebd4e1b02c95180f6f8021f6a2c49cd73daeeda0f7d95096a3c92fd9",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-singleton_arrays-005",
+      "content_sha256": "2bb2c81075e10636b089909e47c045685c6ea8b6f26005daac8cd4fd215c3ee0",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-stock-001",
+      "content_sha256": "0a338cbab730707c5f44542502d2e8743bcc8eb33b580ec156abb4127df2f7fe",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-stock-010",
+      "content_sha256": "fc366f52e1273dc0ae19bd4bb2c12ef2bb85468270f8ebca1ed2375be03371d9",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-threshold-001",
+      "content_sha256": "a1f582dcdd33645118812be3777461c2869506ad4a08646874106e9e221d9cc3",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-threshold-005",
+      "content_sha256": "f8c59fab46d948d90f7b750ab5c8e39c20bad58f4ab0528e02032a842363d65a",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-wrap-001",
+      "content_sha256": "1cbe174671d91f26d07686b33eb1d963ca7f750db173b7d5c53abf79d5531bc5",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    },
+    {
+      "id": "aug26-wrap-010",
+      "content_sha256": "dc3c6f9e15eb71e5d6c17fd871971940f2f97357fa277fa730bbd43eee9d0c56",
+      "disposition": "accepted for narrow procedural pilot; task and required answer format consistent"
+    }
+  ],
+  "nearest_pairs_inspected": [
+    {
+      "scope": "versus_july",
+      "left": "aug26-project-001",
+      "right": "instruction_following_004",
+      "word_jaccard": 0.219512,
+      "character_ratio": 0.429066,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "versus_july",
+      "left": "aug26-project-002",
+      "right": "instruction_following_004",
+      "word_jaccard": 0.219512,
+      "character_ratio": 0.429066,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "versus_july",
+      "left": "aug26-project-003",
+      "right": "instruction_following_004",
+      "word_jaccard": 0.219512,
+      "character_ratio": 0.429066,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "versus_july",
+      "left": "aug26-project-004",
+      "right": "instruction_following_004",
+      "word_jaccard": 0.219512,
+      "character_ratio": 0.429066,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "versus_july",
+      "left": "aug26-project-005",
+      "right": "instruction_following_004",
+      "word_jaccard": 0.219512,
+      "character_ratio": 0.429066,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "train_vs_validation",
+      "left": "aug26-deduplicate-004",
+      "right": "aug26-remove_token-001",
+      "word_jaccard": 0.285714,
+      "character_ratio": 0.517007,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "train_vs_validation",
+      "left": "aug26-deduplicate-006",
+      "right": "aug26-remove_token-001",
+      "word_jaccard": 0.285714,
+      "character_ratio": 0.510204,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "train_vs_validation",
+      "left": "aug26-largest-005",
+      "right": "aug26-location_chain-004",
+      "word_jaccard": 0.258065,
+      "character_ratio": 0.506224,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "train_vs_validation",
+      "left": "aug26-largest-009",
+      "right": "aug26-location_chain-003",
+      "word_jaccard": 0.3,
+      "character_ratio": 0.506224,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    },
+    {
+      "scope": "train_vs_validation",
+      "left": "aug26-largest-002",
+      "right": "aug26-location_chain-005",
+      "word_jaccard": 0.258065,
+      "character_ratio": 0.497925,
+      "disposition": "retained; shared behavior vocabulary, distinct task input and requested answer"
+    }
+  ],
+  "initial_findings": [
+    "Fixed singular/plural wording in rotation prompts.",
+    "Changed threshold-count answer format to omit a grammatically incorrect plural suffix."
+  ],
+  "human_reviewed": 0,
+  "limits": "Sampled assistant inspection plus 240 automated prompt-derived checks; no claim that a human inspected any row. Shared vocabulary and procedural design limit independence."
+}

@@ -15,6 +15,10 @@ SFT data schema, validation commands, and opt-in tokenizer checks:
 [A3 training data contract](docs/training_schema.md). Core data checks run on
 CPU; MLX training dependencies are selected on Apple Silicon macOS.
 
+[A4 dataset card](docs/august_sft_dataset.md): the small original procedural
+SFT dataset, split manifest and review records in `datasets/sft/` are explicitly
+tracked for reproducibility. Generated run reports and caches remain local.
+
 ## Rules
 
 Keep source code, configs, schemas, and small reproducible eval definitions in
