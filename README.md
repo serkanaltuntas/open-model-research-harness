@@ -11,6 +11,10 @@ This project uses Python 3.12+ and `uv`.
 uv sync
 ```
 
+SFT data schema, validation commands, and opt-in tokenizer checks:
+[A3 training data contract](docs/training_schema.md). Core data checks run on
+CPU; MLX training dependencies are selected on Apple Silicon macOS.
+
 ## Rules
 
 Keep source code, configs, schemas, and small reproducible eval definitions in

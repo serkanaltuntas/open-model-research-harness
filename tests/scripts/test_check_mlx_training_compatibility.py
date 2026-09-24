@@ -118,6 +118,15 @@ def test_compatibility_check_uses_pinned_snapshot_without_training(
         tokenizer_artifact=replace(original.tokenizer_artifact, size_bytes=4),
     )
     snapshot = make_snapshot(tmp_path, config)
+    # This is an offline dependency-injected test, not an MLX installation check.
+    monkeypatch.setattr(
+        "scripts.check_mlx_training_compatibility._package_version",
+        lambda name: "test-version",
+    )
+    monkeypatch.setattr(
+        "scripts.check_mlx_training_compatibility._macos_version",
+        lambda: "test-macos",
+    )
     calls = {}
 
     def fake_snapshot_download(**kwargs):
