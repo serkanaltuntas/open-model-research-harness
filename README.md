@@ -3,6 +3,14 @@
 A small research harness for building and running open model evaluations behind
 Open Model Lab.
 
+## Current plan
+
+The [local-first execution plan](docs/execution-plan.md) separates development
+from resumable compute. Long local jobs do not stop independent code, dataset,
+grader or test work; real model/data prerequisites still gate measured results.
+Former target months are historical. Cloud compute is opt-in, not the default.
+The frozen July baseline and published evidence remain unchanged.
+
 ## Setup
 
 This project uses Python 3.12+ and `uv`.

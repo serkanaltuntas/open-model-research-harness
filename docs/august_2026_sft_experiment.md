@@ -1,5 +1,13 @@
 # August 2026 SFT Experiment Specification
 
+> **Execution policy updated 2026-11-08:** This specification records the original
+> experiment design; its filename, artifact names and historical model decision
+> are not current target dates. Follow [execution-plan.md](execution-plan.md) for
+> local-first placement, separate development/compute queues, and v2 before new
+> causal SFT claims. Preserve July unchanged as historical context, not the causal
+> baseline for a different model/runtime. The former M4 Max target is not a
+> required production device; validate the provided worker and selected artifact.
+
 ## 1. Objective
 
 The August 2026 research question is:

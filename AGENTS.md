@@ -10,6 +10,13 @@ publish unverified conclusions.
 
 ## Scope For Agents
 
+- Follow `docs/execution-plan.md`: development and local compute are separate
+  workstreams. Block only the experiment that needs an unavailable artifact;
+  fixture/code readiness is not a completed measured result.
+- Default cloud allocation is zero. Do not launch paid jobs or assume a personal
+  workstation is a sustained worker to recover a historical target month.
+- Keep personal availability and staffing arrangements out of public copy.
+
 - Keep changes narrow and aligned with the existing repository structure.
 - Read the relevant files before editing; do not rely on assumptions about
   project layout, dependencies, or generated artifacts.
