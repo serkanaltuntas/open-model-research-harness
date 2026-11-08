@@ -8,7 +8,7 @@ Open Model Lab.
 The [local-first execution plan](docs/execution-plan.md) separates development
 from resumable compute. Long local jobs do not stop independent code, dataset,
 grader or test work; real model/data prerequisites still gate measured results.
-Former target months are historical. Cloud compute is opt-in, not the default.
+Former target months are historical. Local-first execution is the technical approach.
 The frozen July baseline and published evidence remain unchanged.
 
 ## Setup

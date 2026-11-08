@@ -26,7 +26,7 @@ memory-intensive job there at a time; preempt long jobs at safe boundaries for
 short enabling tests rather than starve development. CPU/data preparation may
 proceed separately. Queue state never fabricates a scored run.
 
-## Hardware and spending policy
+## Local-first execution and hardware evidence
 
 - Use the provided local Apple Silicon worker for all fitting jobs, including
   long training, teacher generation and judging. `gpt-oss:120b` is a local
@@ -35,12 +35,12 @@ proceed separately. Queue state never fabricates a scored run.
 - Use the CPU/data host for feasible parsing, indexes, grading, statistics,
   orchestration and backups. Protect the owner's main workstation from required
   sustained production work.
-- Default cloud-compute allocation is **zero**. A slow local run is not an
-  automatic overflow rental or permission to weaken model/data/eval scope.
+- Local-first execution allows long, resumable jobs while independent development
+  proceeds. A slow run is not permission to weaken model/data/eval scope.
 - Real CUDA/NCCL or named-device measurements require their actual hardware.
-  Keep them pending until separately approved/available; Metal results are not
-  NVIDIA validation. No provider account, paid volume or rental is set up by
-  this plan.
+  Keep them pending until matching hardware is available; Metal results are not
+  NVIDIA validation. This execution plan does not establish hardware support
+  or provision infrastructure.
 
 ## Stage map: develop ahead, measure after prerequisites
 
@@ -98,9 +98,9 @@ Do not add invented run records merely to represent a future job.
   creates a recorded identity/caveat, not an invisible performance optimization.
 
 If a full working set or backend is infeasible, document it and continue another
-ready development item. Present waiting, unchanged-semantics local techniques,
-borrowed hardware or bounded rental as separate choices. Only the owner approves
-spending, scope changes or weaker model/data substitutions.
+ready development item. Investigate checkpointing, batching and compatible local
+implementations without silently changing objectives, model/data scope or
+comparison controls. Separate local results from unverified device-specific claims.
 
 ## Current position and next steps
 
