@@ -33,8 +33,8 @@ proceed separately. Queue state never fabricates a scored run.
   candidate reported usable by the owner; record its exact artifact, context,
   memory and throughput instead of assuming fit or impossibility from a label.
 - Use the CPU/data host for feasible parsing, indexes, grading, statistics,
-  orchestration and backups. Protect the owner's main workstation from required
-  sustained production work.
+  orchestration and backups. Select the current designated GPU worker explicitly;
+  an unavailable future worker is not a reason to block a runnable local job.
 - Local-first execution allows long, resumable jobs while independent development
   proceeds. A slow run is not permission to weaken model/data/eval scope.
 - Real CUDA/NCCL or named-device measurements require their actual hardware.
@@ -103,6 +103,13 @@ implementations without silently changing objectives, model/data scope or
 comparison controls. Separate local results from unverified device-specific claims.
 
 ## Current position and next steps
+
+Timing estimates distinguish code readiness from actual experiment completion.
+A relative worker-speed assumption is not a hardware benchmark or a complete
+job duration: record absolute throughput, useful availability, queue contention,
+working-set fit and required inputs. At a worker handover, preserve completed
+work and recompute only the remainder after parity/recovery checks. Personal
+machine/access assumptions and effort calendars are not public milestones.
 
 - **Completed evidence:** July foundation and reports; MLX load/generation
   compatibility report. Preserve exact published evidence, not inferred later work.

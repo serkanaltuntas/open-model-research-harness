@@ -13,9 +13,10 @@ publish unverified conclusions.
 - Follow `docs/execution-plan.md`: development and local compute are separate
   workstreams. Block only the experiment that needs an unavailable artifact;
   fixture/code readiness is not a completed measured result.
-- Use local-first execution; do not assume a personal workstation is a sustained
-  worker to recover a historical target month. Resource provisioning is outside
-  a documentation or planning task unless explicitly requested.
+- Use the currently designated local worker; do not wait for an unavailable
+  replacement. Transfer only unfinished jobs after checkpoint/input/backend
+  validation. Resource provisioning is outside a documentation or planning task
+  unless explicitly requested.
 - Keep personal finances, availability and staffing arrangements out of public copy.
 
 - Keep changes narrow and aligned with the existing repository structure.
